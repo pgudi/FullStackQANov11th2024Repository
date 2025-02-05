@@ -2,7 +2,10 @@ package com.sgtesting.tests;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+
+import java.util.List;
 
 public class XPathDemo {
     private static WebDriver oDriver=null;
@@ -16,7 +19,14 @@ public class XPathDemo {
    //     relativeXpathUsingTagNameWithMultipleAttributeNameValueCombination();
    //     relativeXpathUsingTagNameWithMultipleAttributeNameValueCombinationByAndOperator();
    //     relativeXpathUsingTagNameWithMultipleAttributeNameValueCombinationByOROperator();//relativeXpathUsingTagNameWithAttributeValue();
-        relativeXpathUsingAttributeNameValueCombination();
+   //     relativeXpathUsingAttributeNameValueCombination();
+   //     relativeXpathUsingTagNameWithAttributeName();
+   //     relativeXpathUsingTagNameWithAttributeName_01();
+   //     relativeXpathUsingTagNameWithAttributeName_02();
+   //     relativeXpathUsingTagNameWithAttributeName_03();
+   //     relativeXpathUsingPartialMatchingOfAttributeValue();
+   //     relativeXpathUsingTagNameWithtextContent();
+        relativeXpathUsingTagNameWithPartialtextContent();
     }
     private static void launchBrowser()
     {
@@ -117,6 +127,105 @@ public class XPathDemo {
      */
     private static void relativeXpathUsingAttributeNameValueCombination()
     {
-        oDriver.findElement(By.xpath("//input[@*='Submit']")).click();
+        oDriver.findElement(By.xpath("//*[@value='Submit']")).click();
+    }
+
+    /**
+     * case 9 : identify the eleemnt using tagName and attribute name value combination
+     * syntax: //<tagName>[@attributename='attributeValue']
+     */
+    private static void relativeXpathUsingTagNameWithAttributeName()
+    {
+        List<WebElement> oLinks=oDriver.findElements(By.xpath("//a[@href]"));
+        System.out.println("# of Links in a Web Page :"+oLinks.size());
+    }
+
+    private static void relativeXpathUsingTagNameWithAttributeName_01()
+    {
+        //Click on a link which has link name contains "ware" string
+        List<WebElement> oLinks=oDriver.findElements(By.xpath("//a[@href]"));
+        for(int i=0;i<oLinks.size();i++)
+        {
+            WebElement link=oLinks.get(i);
+            String linkname=link.getText();
+            System.out.println("Link Name :"+linkname);
+            if(linkname.contains("ware"))
+            {
+                link.click();
+                break;
+            }
+        }
+    }
+
+    private static void relativeXpathUsingTagNameWithAttributeName_02()
+    {
+        //Display All available Link Names
+        List<WebElement> oLinks=oDriver.findElements(By.xpath("//a[@href]"));
+        for(int i=0;i<oLinks.size();i++)
+        {
+            WebElement link=oLinks.get(i);
+            String linkname=link.getText();
+            System.out.println("Link Name :"+linkname);
+
+        }
+    }
+
+    private static void relativeXpathUsingTagNameWithAttributeName_03()
+    {
+        //StaleElementReferenceException
+        //StaleElementReferenceException: stale element reference: stale element not found
+        List<WebElement> oLinks=oDriver.findElements(By.xpath("//a[@href]"));
+        for(int i=0;i<oLinks.size();i++)
+        {
+            WebElement link=oLinks.get(i);
+            String linkname=link.getText();
+            System.out.println("Link Name :"+linkname);
+            if(linkname.contains("Software"))
+            {
+                link.click();
+            }
+        }
+    }
+
+    /**
+     * case 10 : identify the eleemnt using Partial Matching of Attribute Value
+     * syntax:
+     *  starts-with(@attributeName, 'attributeValue')
+     *  ends-with(@attributeName, 'attributeValue')
+     *  contains(@attributeName, 'attributeValue')
+     *
+     * //<tagName>[starts-with(@attributeName, 'attributeValue')]
+     * //<tagName>[ends-with(@attributeName, 'attributeValue')]
+     * //<tagName>[contains(@attributeName, 'attributeValue')]
+     */
+    private static void relativeXpathUsingPartialMatchingOfAttributeValue()
+    {
+        oDriver.findElement(By.xpath("//input[starts-with(@id,'chk1')]")).click();
+     //   oDriver.findElement(By.xpath("//input[contains(@id,'win')]")).click();
+     //   oDriver.findElement(By.xpath("//input[ends-with(@id,'dows')]")).click();
+    }
+
+    /**
+     * case 11 : identify the element using text content
+     * syntax: //<tagName>[text()='content']
+     */
+    private static void relativeXpathUsingTagNameWithtextContent()
+    {
+        oDriver.findElement(By.xpath("//a[text()='POI Apache']")).click();
+    }
+
+    /**
+     * case 12 : identify the element using partial matching of text content
+     * syntax:
+     * starts-with(text(),'content');
+     * ends-with(text(),'content');
+     * contains(text(),'content');
+     * //<tagName>[starts-with(text(),'content')]
+     * //<tagName>[ends-with(text(),'content')]
+     * //<tagName>[contains(text(),'content')]
+     */
+    private static void relativeXpathUsingTagNameWithPartialtextContent()
+    {
+        oDriver.findElement(By.xpath("//a[starts-with(text(),'S G')]")).click();
     }
 }
