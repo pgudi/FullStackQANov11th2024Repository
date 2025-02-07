@@ -12,7 +12,9 @@ public class XPathAxesDemo {
     //    enterTheSalaryForPersonSachinTendulakr();
     //    basedOnPersonRahulDravidEnterSalaryFor2ndRecord();
     //    makeTheStatusAsActiveForIndianFreedomFighter();
-        makeTheStatusAsActiveForRecordWhichIsPreviousToPreviousFromSachinTendulkar();
+    //    makeTheStatusAsActiveForRecordWhichIsPreviousToPreviousFromSachinTendulkar();
+    //    basedOnChildIdentifyTheParentElement();
+        basedOnParentIdentifyTheChildElement();
     }
     private static void launchBrowser()
     {
@@ -74,4 +76,22 @@ public class XPathAxesDemo {
     {
         oDriver.findElement(By.xpath("//td[text()='Sachin Tendulkar']/preceding::tr[1]/preceding::tr[1]/td[1]/input")).click();
     }
+    /**
+     * case 5: ancestor
+     * Description: Based on child Element identify the parent Element
+     */
+    private static void basedOnChildIdentifyTheParentElement()
+    {
+        String v1=oDriver.findElement(By.xpath("//input[@id='edit4']/ancestor::td/ancestor::tr/ancestor::table")).getAttribute("id");
+        System.out.println(v1);
+    }
+
+    /**
+     * case 6: descendant
+     * Description: Based on Parent Element identify the child Element
+     */
+    private static void basedOnParentIdentifyTheChildElement() {
+        oDriver.findElement(By.xpath("//table[@id='tbl1']/descendant::tr[6]/td[6]/input")).sendKeys("14000");
+    }
+
 }
