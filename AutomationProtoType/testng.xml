@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Testcases">
+    <test name="Scenarios">
+        <classes>
+            <class name="com.sgtesting.tests.LoginLogout"></class>
+            <class name="com.sgtesting.tests.CreaetUserScenario"></class>
+        </classes>
+    </test>
+</suite>
