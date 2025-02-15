@@ -2,7 +2,10 @@ package com.sgtesting.tests;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+
+import java.util.List;
 
 public class CssSelectorDemo {
     private static WebDriver oDriver=null;
@@ -17,7 +20,14 @@ public class CssSelectorDemo {
    //     relativeCSSUsingClassAttributeValue();
   //      relativeCSSUsingTagNameWithAttributeNameValue();
   //      relativeCSSUsingTagNameWithMultipleAttributeNameValue();
-        relativeCSSUsingTagNameWithPartialMatchingOfAttributeNameValue();
+  //      relativeCSSUsingTagNameWithPartialMatchingOfAttributeNameValue();
+  //      relativeCSSUsingTagNameWithAttributeName();
+  //      relativeCSSUsingTagNameWithAttributeName_01();
+  //      relativeCSSUsingTagNameWithAttributeName_02();
+  //      relativeCSSUsingTagNameWithAttributeName_03();
+   //     relativeCSSUsingTagNameWithAttributeName_04();
+   //     relativeCSSUsingNthChildConcept();
+        relativeCSSUsingSiblingApproach();
     }
     private static void launchBrowser()
     {
@@ -131,5 +141,97 @@ public class CssSelectorDemo {
     {
      //   oDriver.findElement(By.cssSelector("input[id ^= 'btn1']")).click();
         oDriver.findElement(By.cssSelector("input[id *= 'submit1']")).click();
+    }
+
+    /**
+     * case 9: Identify Elements using tagName with AttributeName alone
+     * Syntax: <tagName>[AttributeName]
+     */
+    private static void relativeCSSUsingTagNameWithAttributeName()
+    {
+        // display Number of Links in the Application
+        List<WebElement> oLinks=oDriver.findElements(By.cssSelector("a[href]"));
+        System.out.println("# of Links in Application:"+oLinks.size());
+    }
+
+    private static void relativeCSSUsingTagNameWithAttributeName_01()
+    {
+        // display Each Link Names in the Application
+        List<WebElement> oLinks=oDriver.findElements(By.cssSelector("a[href]"));
+        for(int i=0;i<oLinks.size();i++)
+        {
+            WebElement link=oLinks.get(i);
+            String name=link.getText();
+            System.out.println(name);
+        }
+    }
+
+    private static void relativeCSSUsingTagNameWithAttributeName_02()
+    {
+        // display Each Link Names in the Application
+        List<WebElement> oLinks=oDriver.findElements(By.cssSelector("a[href]"));
+        for(int i=0;i<oLinks.size();i++)
+        {
+            WebElement link=oLinks.get(i);
+            String name=link.getText();
+            System.out.println(name);
+        }
+    }
+
+    private static void relativeCSSUsingTagNameWithAttributeName_03()
+    {
+        // Perfrom click operation on particular Link
+        List<WebElement> oLinks=oDriver.findElements(By.cssSelector("a[href]"));
+        for(int i=0;i<oLinks.size();i++)
+        {
+            WebElement link=oLinks.get(i);
+            String name=link.getText();
+            if(name.endsWith("HQ"))
+            {
+                link.click();
+                break;
+            }
+        }
+    }
+
+    private static void relativeCSSUsingTagNameWithAttributeName_04()
+    {
+        // org.openqa.selenium.StaleElementReferenceException: stale element reference: stale element not found
+        List<WebElement> oLinks=oDriver.findElements(By.cssSelector("a[href]"));
+        for(int i=0;i<oLinks.size();i++)
+        {
+            WebElement link=oLinks.get(i);
+            String name=link.getText();
+            if(name.endsWith("HQ"))
+            {
+                link.click();
+            }
+        }
+    }
+
+    /**
+     * case 10: nth-child Element
+     * Syntax: :nth-child(child number);
+     *
+     */
+    private static void relativeCSSUsingNthChildConcept()
+    {
+        oDriver.findElement(By.cssSelector("#frm3 > :nth-child(1)")).sendKeys("DemoUserData1");
+        oDriver.findElement(By.cssSelector("#frm3 > :nth-child(2)")).sendKeys("DemoUserData2");
+        oDriver.findElement(By.cssSelector("#frm3 > :nth-child(3)")).sendKeys("DemoUserData3");
+        oDriver.findElement(By.cssSelector("#frm3 > :nth-child(4)")).sendKeys("DemoUserData4");
+    }
+
+    /**
+     * case 11: Identify sibling Element
+     * Syntax: :<Element> + <Element>
+     *
+     */
+    private static void relativeCSSUsingSiblingApproach()
+    {
+        oDriver.findElement(By.cssSelector("#frm3 > input")).sendKeys("DemoUserData1");
+        oDriver.findElement(By.cssSelector("#frm3 > input + input")).sendKeys("DemoUserData2");
+        oDriver.findElement(By.cssSelector("#frm3 > input + input + input")).sendKeys("DemoUserData3");
+        oDriver.findElement(By.cssSelector("#frm3 > input + input+ input + input")).sendKeys("DemoUserData4");
     }
 }
