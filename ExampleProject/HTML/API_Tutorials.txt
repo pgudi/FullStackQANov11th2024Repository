@@ -1,0 +1,73 @@
+How to Validate the JSON Response:
+----------------------------
+In Postman Tool click on Test tab
+In Right side we can view JavaScript SNIPPETS
+the folowing options are avilable to validate the JSON Response
+1.Status code: Code is 200
+2. Response Body: JOSN Value Check
+
+Sample Code:
+pm.test("Status code is 200", function () {
+    pm.response.to.have.status(200);
+});
+
+pm.test("Get a PArticular User", function () {
+    var jsonData = pm.response.json();
+    pm.expect(jsonData.first_name).to.eql('Welcome');
+    pm.expect(jsonData.last_name).to.eql('User1');
+    pm.expect(jsonData.address).to.eql('Upparwadi Sindhanur');
+});
+++++++++++++++++++++++++++++++++++++++++++++
+Status Codes in API Testing:
+2XX : Successful
+1). 200 OK		The request is OK (this is the standard response for successful HTTP requests)
+2). 201 Created		The request has been fulfilled, and a new resource is created 
+3). 202 Accepted 	The request has been accepted for processing, but the processing has not been completed
+4). 204 No Content	The request has been successfully processed, but is not returning any content
+
+4xx: Client Error
+1). 400 Bad Request	The request cannot be fulfilled due to bad syntax
+2). 401 Unauthorized	The request was a legal request, but the server is refusing to respond to it
+3). 404 Not Found	The requested page could not be found but may be available again in the future
+4). 408 Request Timeout	The server timed out waiting for the request
+
+5xx: Server Error
+1) 500 Internal Server Error	A generic error message, given when no more specific message is suitable
+2) 502 Bad Gateway	The server was acting as a gateway or proxy and received an invalid response from the upstream server
+3) 503 Service Unavailable	The server is currently unavailable 
+4). 505 HTTP Version Not Supported	The server does not support the HTTP protocol version used in the request
+
+HTTP Methods Description:
+GET: The GET http method used to FETCH or retrive resource from Server
+
+POST: the POST http method is used to create a new Resource
+
+PUT: the PUT http method is used to modify or update the existing resource
+if resource is not available then it creates the Resource
+
+PATCH: the PATCH http method is used to modify or update the existing resource, if resource is not available then it displays error message.
+
+DELETE: the DELETE http method is used to remove or erase the resource from the server permanently
+
+
+***How to Send the Request and get the Response ?
+In Postman in Body section select Raw and File content type as JSON and we have to create the JOSN Request, suppose if the request need for SignIn then it can be as follows:
+
+{
+   "email":"prabhakargudi@gmail.com",
+   "password":"India111"
+}
+
+Once after creating the Request provide the required Authorization and Run the Request.
+
+How to Create Collections and How to run the collections?
+Ans:
+In Postman for each request, there is a Save option then we can save each request in a Collection [Collection is a container,it has multiple requests]
+
+How to run the Collection?
+Ans:
+In Postman there is a "Runner" option once we clicked on that option, it displays 
+Collection Runner window. there select the specific collection Name.and Run the Collection.
+
+
+

@@ -1,0 +1,172 @@
+JSON Schema:
+-------------
+JSON Schema is a contract for JSON document that defines the expected data types and format of each field in the response.
+
+Why is JSON Schema Validation required?
+
+JSON Schema Validation is required because:
+
+1. We monitor API responses and ensure that the format that we are getting is same as the expected one.
+2. We get alert whenever there is any breaking change in JSON response.
+3. We use JSON Schema to construct a model of API response and it makes easier to validate that API is returning the valid data.
+
+How to generate the JSON Schema for Postman:
+--------------------------------------------
+1. Navigate to the URL:
+https://jsonschema.net/app/schemas/0
+2. Paste the JSON REsponse on left hand side and click on submit button
+3. It generates json schema on right handside.
+4. Copy the JSON Schema and paste it into the Postman Tests tab
+5. We have to write the below code to valida the json schema
+
+pm.test("Validate schema", () => {
+            pm.response.to.have.jsonSchema(schema);
+});
+
++++++++++++++++++++++++++++++++++++++++++++++
+const schema=
+{
+   "type": "array",
+    "default": [],
+    "title": "Root Schema",
+    "items": {
+        "type": "object",
+        "default": {},
+        "title": "A Schema",
+        "required": [
+            "id",
+            "first_name",
+            "last_name",
+            "email",
+            "phone_number",
+            "address",
+            "state",
+            "zipcode",
+            "created_at",
+            "updated_at",
+            "student_id"
+        ],
+        "properties": {
+            "id": {
+                "type": "integer",
+                "default": 0,
+                "title": "The id Schema",
+                "examples": [
+                    326569
+                ]
+            },
+            "first_name": {
+                "type": "string",
+                "default": "",
+                "title": "The first_name Schema",
+                "examples": [
+                    "DemoUser1"
+                ]
+            },
+            "last_name": {
+                "type": "string",
+                "default": "",
+                "title": "The last_name Schema",
+                "examples": [
+                    "User1"
+                ]
+            },
+            "email": {
+                "type": "string",
+                "default": "",
+                "title": "The email Schema",
+                "examples": [
+                    "demo@gmail.com"
+                ]
+            },
+            "phone_number": {
+                "type": "string",
+                "default": "",
+                "title": "The phone_number Schema",
+                "examples": [
+                    "9800012345"
+                ]
+            },
+            "address": {
+                "type": "string",
+                "default": "",
+                "title": "The address Schema",
+                "examples": [
+                    "RPC Layout"
+                ]
+            },
+            "state": {
+                "type": "string",
+                "default": "",
+                "title": "The state Schema",
+                "examples": [
+                    "Karnataka"
+                ]
+            },
+            "zipcode": {
+                "type": "string",
+                "default": "",
+                "title": "The zipcode Schema",
+                "examples": [
+                    "560040"
+                ]
+            },
+            "created_at": {
+                "type": "string",
+                "default": "",
+                "title": "The created_at Schema",
+                "examples": [
+                    "2022-05-04T05:39:46.000Z"
+                ]
+            },
+            "updated_at": {
+                "type": "string",
+                "default": "",
+                "title": "The updated_at Schema",
+                "examples": [
+                    "2022-05-04T05:39:46.000Z"
+                ]
+            },
+            "student_id": {
+                "type": "integer",
+                "default": 0,
+                "title": "The student_id Schema",
+                "examples": [
+                    1449
+                ]
+            }
+        },
+        "examples": [{
+            "id": 326569,
+            "first_name": "DemoUser1",
+            "last_name": "User1",
+            "email": "demo@gmail.com",
+            "phone_number": "9800012345",
+            "address": "RPC Layout",
+            "state": "Karnataka",
+            "zipcode": "560040",
+            "created_at": "2022-05-04T05:39:46.000Z",
+            "updated_at": "2022-05-04T05:39:46.000Z",
+            "student_id": 1449
+        }]
+    },
+    "examples": [
+        [{
+            "id": 326569,
+            "first_name": "DemoUser1",
+            "last_name": "User1",
+            "email": "demo@gmail.com",
+            "phone_number": "9800012345",
+            "address": "RPC Layout",
+            "state": "Karnataka",
+            "zipcode": "560040",
+            "created_at": "2022-05-04T05:39:46.000Z",
+            "updated_at": "2022-05-04T05:39:46.000Z",
+            "student_id": 1449
+        }]
+    ]
+}
+
+pm.test("Validate schema", () => {
+            pm.response.to.have.jsonSchema(schema);
+});
