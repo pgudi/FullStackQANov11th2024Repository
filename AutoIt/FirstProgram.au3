@@ -1,0 +1,1 @@
+MsgBox(1,"Demo Window","It displays an output of the Program")
