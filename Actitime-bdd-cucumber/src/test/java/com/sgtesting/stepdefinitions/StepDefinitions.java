@@ -47,12 +47,12 @@ public class StepDefinitions {
     /**
      * I enter username in username text field
      */
-    @When("^I enter username in username text field$")
-    public void I_enter_username_in_username_text_field()
+    @When("^I enter \"(.*)\" in username text field$")
+    public void I_enter_username_in_username_text_field(String username)
     {
         try
         {
-            oDriver.findElement(By.id("username")).sendKeys("admin");
+            oDriver.findElement(By.id("username")).sendKeys(username);
         }catch(Exception e)
         {
             e.printStackTrace();
@@ -62,12 +62,12 @@ public class StepDefinitions {
     /**
      * I enter password in password text field
      */
-    @When("^I enter password in password text field$")
-    public void I_enter_password_in_password_text_field()
+    @When("^I enter \"(.*)\" in password text field$")
+    public void I_enter_password_in_password_text_field(String password)
     {
         try
         {
-            oDriver.findElement(By.name("pwd")).sendKeys("manager");
+            oDriver.findElement(By.name("pwd")).sendKeys(password);
         }catch(Exception e)
         {
             e.printStackTrace();
@@ -393,4 +393,6 @@ public class StepDefinitions {
             e.printStackTrace();
         }
     }
+
+
 }

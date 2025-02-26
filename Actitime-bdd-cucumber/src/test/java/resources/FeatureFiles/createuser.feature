@@ -1,10 +1,11 @@
+@Execute
 Feature: Validate Create User functionality
 
-  Scenario: Verify Create User Functionality
+  Scenario Outline: Verify Create User Functionality
     Given I launch the Chrome Browser
     And I navigate the Application URL
-    When I enter username in username text field
-    And I enter password in password text field
+    When I enter "<username>" in username text field
+    And I enter "<password>" in password text field
     And I click on SignIn button
     Then I find the Home Page
     And I minimize the flyout window
@@ -25,3 +26,7 @@ Feature: Validate Create User functionality
     When I click on Logout Link
     Then I find the Login Page
     And I close Chrome Browser
+
+    Examples:
+      | username | password |
+      | admin    | manager  |
