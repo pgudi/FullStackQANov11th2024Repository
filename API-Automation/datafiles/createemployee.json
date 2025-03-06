@@ -1,0 +1,12 @@
+{
+  "employeeFirstName": "Santosh",
+  "employeeLastName": "Gudi",
+  "jobName": "Manager",
+  "emailId": "santosh@gss.com",
+  "age": 22,
+  "contactNumber": 9010507011,
+  "salary": 25000,
+  "departmentName": "Research",
+  "cityName": "Bangalore",
+  "address": "4th Stage, 5th Cross, Vijaynagar"
+}
