@@ -11,7 +11,7 @@ import io.cucumber.testng.CucumberOptions;
 				"html:Reports/cucumber-report.html",
 				"json:Reports/cucumber.json"
 		},
-		tags = "@Smoke or @Regression"
+		tags = "@Execute"
 		)
 public class DriverScript extends AbstractTestNGCucumberTests{
 

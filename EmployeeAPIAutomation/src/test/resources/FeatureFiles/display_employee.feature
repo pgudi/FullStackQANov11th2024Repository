@@ -1,9 +1,8 @@
 #Author: your.email@your.domain.com
 #Keywords Summary :
 #Feature: List of scenarios.
-@Smoke
+@Execute
 Feature: Get Employee Functionality
-
 
 Scenario: Validate the Get Employee functionality
 Given I provide Get Employee EndPoint
@@ -14,7 +13,7 @@ Then I get the status code as 200
 
 
 Scenario Outline: Validate the Multiple Employees functionality
-Given I provide Get Employee <Request> EndPoint
+Given I provide Get Employee <Request> EndPoint with employeeId
 And I create RequestSpecification object
 And I provide header for the request
 When I run the GET Http Method

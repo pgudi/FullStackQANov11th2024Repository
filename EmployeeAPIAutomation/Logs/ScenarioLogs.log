@@ -1,15 +1,113 @@
-[INFO ] 2025-03-09 10:27:52.999 [main] StepDefinitions - I provide Get Employee EndPoint
-[INFO ] 2025-03-09 10:27:53.841 [main] StepDefinitions - I create RequestSpecification object
-[INFO ] 2025-03-09 10:27:53.988 [main] StepDefinitions - I provide header for the request
-[INFO ] 2025-03-09 10:27:54.123 [main] StepDefinitions - I run the GET Http Method
-[ERROR] 2025-03-09 10:27:55.102 [main] StepDefinitions - there is a Error message has occured during execution of I_run_the_GET_Http_Method, Exception :java.net.ConnectException: Connection refused: connect
-[INFO ] 2025-03-09 10:27:55.103 [main] StepDefinitions - I get the status code as 200
-[ERROR] 2025-03-09 10:27:55.104 [main] StepDefinitions - there is a Error message has occured during execution of I_get_the_status_code_as_200, Exception :java.lang.NullPointerException: Cannot invoke "io.restassured.response.Response.getStatusCode()" because "com.sgtesting.employee.stepdefinitions.StepDefinitions.response" is null
-[INFO ] 2025-03-09 10:27:55.122 [main] StepDefinitions - I provide Get Employee Request EndPoint
-[INFO ] 2025-03-09 10:27:55.123 [main] StepDefinitions - I create RequestSpecification object
-[INFO ] 2025-03-09 10:27:55.124 [main] StepDefinitions - I provide header for the request
-[INFO ] 2025-03-09 10:27:55.125 [main] StepDefinitions - I run the GET Http Method
-[INFO ] 2025-03-09 10:27:55.574 [main] StepDefinitions - {
+[INFO ] 2025-03-10 13:19:12.501 [main] StepDefinitions - I provide Post Employee Request EndPoint
+[INFO ] 2025-03-10 13:19:12.896 [main] StepDefinitions - I create RequestSpecification object
+[INFO ] 2025-03-10 13:19:13.038 [main] StepDefinitions - I provide the Request Body
+[INFO ] 2025-03-10 13:19:13.039 [main] StepDefinitions - I provide header for the request
+[INFO ] 2025-03-10 13:19:13.094 [main] StepDefinitions - I enter request object to body method
+[INFO ] 2025-03-10 13:19:13.095 [main] StepDefinitions - I run the POST http Method
+[INFO ] 2025-03-10 13:19:13.983 [main] StepDefinitions - {
+    "id": 10004,
+    "employeeFirstName": "Automation",
+    "employeeLastName": "User1",
+    "jobName": "Manager",
+    "emailId": "a_user1@gss.com",
+    "age": 22,
+    "contactNumber": 9010507011,
+    "salary": 25000.0,
+    "departmentName": "Research",
+    "cityName": "Bangalore",
+    "address": "4th Stage, 5th Cross, Vijaynagar",
+    "createdAt": "2025-03-10T07:49:13.901+00:00",
+    "updatedAt": "2025-03-10T07:49:13.901+00:00"
+}
+[INFO ] 2025-03-10 13:19:13.985 [main] StepDefinitions - I get the status code as 201
+[INFO ] 2025-03-10 13:19:13.987 [main] StepDefinitions - I store employeeId in a variable
+[INFO ] 2025-03-10 13:19:14.775 [main] StepDefinitions - I provide Get Employee Request EndPoint
+[INFO ] 2025-03-10 13:19:14.776 [main] StepDefinitions - I create RequestSpecification object
+[INFO ] 2025-03-10 13:19:14.777 [main] StepDefinitions - I provide header for the request
+[INFO ] 2025-03-10 13:19:14.778 [main] StepDefinitions - I run the GET Http Method
+[INFO ] 2025-03-10 13:19:18.207 [main] StepDefinitions - {
+    "id": 10004,
+    "employeeFirstName": "Automation",
+    "employeeLastName": "User1",
+    "jobName": "Manager",
+    "emailId": "a_user1@gss.com",
+    "age": 22,
+    "contactNumber": 9010507011,
+    "salary": 25000.0,
+    "departmentName": "Research",
+    "cityName": "Bangalore",
+    "address": "4th Stage, 5th Cross, Vijaynagar",
+    "createdAt": "2025-03-10T07:49:13.901+00:00",
+    "updatedAt": "2025-03-10T07:49:13.901+00:00"
+}
+[INFO ] 2025-03-10 13:19:18.208 [main] StepDefinitions - I get the status code as 200
+[INFO ] 2025-03-10 13:19:18.208 [main] StepDefinitions - I provide Delete Employee Request EndPoint
+[INFO ] 2025-03-10 13:19:18.210 [main] StepDefinitions - I create RequestSpecification object
+[INFO ] 2025-03-10 13:19:18.213 [main] StepDefinitions - I provide header for the request
+[INFO ] 2025-03-10 13:19:18.214 [main] StepDefinitions - I run the DELETE Http Method
+[INFO ] 2025-03-10 13:19:18.256 [main] StepDefinitions - the employee id 10004 has deleted successfully
+[INFO ] 2025-03-10 13:19:18.256 [main] StepDefinitions - I get the status code as 200
+[INFO ] 2025-03-10 13:32:13.299 [main] StepDefinitions - I provide Post Employee Request EndPoint
+[INFO ] 2025-03-10 13:32:13.697 [main] StepDefinitions - I create RequestSpecification object
+[INFO ] 2025-03-10 13:32:13.836 [main] StepDefinitions - I provide the Request Body
+[INFO ] 2025-03-10 13:32:13.837 [main] StepDefinitions - I provide header for the request
+[INFO ] 2025-03-10 13:32:13.896 [main] StepDefinitions - I enter request object to body method
+[INFO ] 2025-03-10 13:32:13.897 [main] StepDefinitions - I run the POST http Method
+[INFO ] 2025-03-10 13:32:14.790 [main] StepDefinitions - {
+    "id": 10005,
+    "employeeFirstName": "Automation",
+    "employeeLastName": "User1",
+    "jobName": "Manager",
+    "emailId": "a_user1@gss.com",
+    "age": 22,
+    "contactNumber": 9010507011,
+    "salary": 25000.0,
+    "departmentName": "Research",
+    "cityName": "Bangalore",
+    "address": "4th Stage, 5th Cross, Vijaynagar",
+    "createdAt": "2025-03-10T08:02:14.710+00:00",
+    "updatedAt": "2025-03-10T08:02:14.710+00:00"
+}
+[INFO ] 2025-03-10 13:32:14.792 [main] StepDefinitions - I get the status code as 201
+[INFO ] 2025-03-10 13:32:14.795 [main] StepDefinitions - I store employeeId in a variable
+[INFO ] 2025-03-10 13:32:15.540 [main] StepDefinitions - Employee Id :10005
+[INFO ] 2025-03-10 13:32:15.540 [main] StepDefinitions - I provide Get Employee Request EndPoint
+[INFO ] 2025-03-10 13:32:15.541 [main] StepDefinitions - I create RequestSpecification object
+[INFO ] 2025-03-10 13:32:15.542 [main] StepDefinitions - I provide header for the request
+[INFO ] 2025-03-10 13:32:15.544 [main] StepDefinitions - I run the GET Http Method
+[INFO ] 2025-03-10 13:32:15.590 [main] StepDefinitions - {
+    "id": 10005,
+    "employeeFirstName": "Automation",
+    "employeeLastName": "User1",
+    "jobName": "Manager",
+    "emailId": "a_user1@gss.com",
+    "age": 22,
+    "contactNumber": 9010507011,
+    "salary": 25000.0,
+    "departmentName": "Research",
+    "cityName": "Bangalore",
+    "address": "4th Stage, 5th Cross, Vijaynagar",
+    "createdAt": "2025-03-10T08:02:14.710+00:00",
+    "updatedAt": "2025-03-10T08:02:14.710+00:00"
+}
+[INFO ] 2025-03-10 13:32:15.591 [main] StepDefinitions - I get the status code as 200
+[INFO ] 2025-03-10 13:32:15.591 [main] StepDefinitions - I provide Delete Employee Request EndPoint
+[INFO ] 2025-03-10 13:32:15.593 [main] StepDefinitions - I create RequestSpecification object
+[INFO ] 2025-03-10 13:32:15.596 [main] StepDefinitions - I provide header for the request
+[INFO ] 2025-03-10 13:32:15.597 [main] StepDefinitions - I run the DELETE Http Method
+[INFO ] 2025-03-10 13:32:15.629 [main] StepDefinitions - the employee id 10005 has deleted successfully
+[INFO ] 2025-03-10 13:32:15.629 [main] StepDefinitions - I get the status code as 200
+[INFO ] 2025-03-10 13:32:15.647 [main] StepDefinitions - I provide Get Employee EndPoint
+[INFO ] 2025-03-10 13:32:15.647 [main] StepDefinitions - I create RequestSpecification object
+[INFO ] 2025-03-10 13:32:15.649 [main] StepDefinitions - I provide header for the request
+[INFO ] 2025-03-10 13:32:15.650 [main] StepDefinitions - I run the GET Http Method
+[ERROR] 2025-03-10 13:32:15.675 [main] StepDefinitions - there is a Error message has occured during execution of I_run_the_GET_Http_Method, Exception :java.net.ConnectException: Connection refused: connect
+[INFO ] 2025-03-10 13:32:15.676 [main] StepDefinitions - I get the status code as 200
+[INFO ] 2025-03-10 13:32:15.686 [main] StepDefinitions - I provide Get Employee Request EndPoint
+[INFO ] 2025-03-10 13:32:15.688 [main] StepDefinitions - I create RequestSpecification object
+[INFO ] 2025-03-10 13:32:15.689 [main] StepDefinitions - I provide header for the request
+[INFO ] 2025-03-10 13:32:15.690 [main] StepDefinitions - I run the GET Http Method
+[INFO ] 2025-03-10 13:32:15.714 [main] StepDefinitions - {
     "id": 1,
     "employeeFirstName": "Santosh",
     "employeeLastName": "Gudi",
@@ -24,12 +122,12 @@
     "createdAt": "2024-10-17T07:13:39.145+00:00",
     "updatedAt": "2024-10-17T07:13:39.146+00:00"
 }
-[INFO ] 2025-03-09 10:27:55.575 [main] StepDefinitions - I get the status code as 200
-[INFO ] 2025-03-09 10:27:55.606 [main] StepDefinitions - I provide Get Employee Request EndPoint
-[INFO ] 2025-03-09 10:27:55.611 [main] StepDefinitions - I create RequestSpecification object
-[INFO ] 2025-03-09 10:27:55.613 [main] StepDefinitions - I provide header for the request
-[INFO ] 2025-03-09 10:27:55.615 [main] StepDefinitions - I run the GET Http Method
-[INFO ] 2025-03-09 10:27:55.669 [main] StepDefinitions - {
+[INFO ] 2025-03-10 13:32:15.715 [main] StepDefinitions - I get the status code as 200
+[INFO ] 2025-03-10 13:32:15.724 [main] StepDefinitions - I provide Get Employee Request EndPoint
+[INFO ] 2025-03-10 13:32:15.725 [main] StepDefinitions - I create RequestSpecification object
+[INFO ] 2025-03-10 13:32:15.726 [main] StepDefinitions - I provide header for the request
+[INFO ] 2025-03-10 13:32:15.729 [main] StepDefinitions - I run the GET Http Method
+[INFO ] 2025-03-10 13:32:15.754 [main] StepDefinitions - {
     "id": 952,
     "employeeFirstName": "Vinith",
     "employeeLastName": "G",
@@ -44,12 +142,12 @@
     "createdAt": "2024-10-18T06:41:15.641+00:00",
     "updatedAt": "2024-10-18T06:48:04.547+00:00"
 }
-[INFO ] 2025-03-09 10:27:55.670 [main] StepDefinitions - I get the status code as 200
-[INFO ] 2025-03-09 10:27:55.677 [main] StepDefinitions - I provide Get Employee Request EndPoint
-[INFO ] 2025-03-09 10:27:55.678 [main] StepDefinitions - I create RequestSpecification object
-[INFO ] 2025-03-09 10:27:55.679 [main] StepDefinitions - I provide header for the request
-[INFO ] 2025-03-09 10:27:55.679 [main] StepDefinitions - I run the GET Http Method
-[INFO ] 2025-03-09 10:27:55.701 [main] StepDefinitions - {
+[INFO ] 2025-03-10 13:32:15.755 [main] StepDefinitions - I get the status code as 200
+[INFO ] 2025-03-10 13:32:15.766 [main] StepDefinitions - I provide Get Employee Request EndPoint
+[INFO ] 2025-03-10 13:32:15.767 [main] StepDefinitions - I create RequestSpecification object
+[INFO ] 2025-03-10 13:32:15.768 [main] StepDefinitions - I provide header for the request
+[INFO ] 2025-03-10 13:32:15.769 [main] StepDefinitions - I run the GET Http Method
+[INFO ] 2025-03-10 13:32:15.793 [main] StepDefinitions - {
     "id": 953,
     "employeeFirstName": "Geetha",
     "employeeLastName": "Nandi",
@@ -64,4 +162,4 @@
     "createdAt": "2024-10-18T06:43:01.009+00:00",
     "updatedAt": "2024-10-18T06:43:01.009+00:00"
 }
-[INFO ] 2025-03-09 10:27:55.702 [main] StepDefinitions - I get the status code as 200
+[INFO ] 2025-03-10 13:32:15.794 [main] StepDefinitions - I get the status code as 200
